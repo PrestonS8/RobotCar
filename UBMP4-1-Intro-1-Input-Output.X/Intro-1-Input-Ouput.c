@@ -51,6 +51,22 @@ int main(void)
             LED6 = 0;
             __delay_ms(100);
         }
+         // Nested if 'AND' code
+        if(SW3 == 0)
+        {
+            if(SW4 == 0)
+            {
+                LED4 = 1;
+            }
+            else
+            {
+                LED4 = 0;
+            }
+        }
+        else
+        {
+            LED4 = 0;
+        }
         
         // Add code for your Program Analysis and Programming Activities here:
 
@@ -67,20 +83,20 @@ int main(void)
  * 1. How many times do the LEDs flash if SW2 is quickly pressed and released?
  *    Do the LEDs keep flashing when SW2 is held? Look at the program and
  *    explain why this happens when SW2 is held.
- * 
+ * It'll flash 4 times and keep flashing until it is released. This happens due to the code above.
  * 2. Explain the difference between the statements: LED3 = 0; and LED3 = 1;
- * 
+ * LED3 = 1 means it's off while LED3 = 0 means it's on.
  * 3. What voltage do you expect the microcontroller to output to LED D3 when
  *    the statement LED3 = 0; runs? What voltage do you expect the output to be
  *    when the statement LED3 = 1; runs?
- * 
+ * When LED3 = 1 there won't be enough voltage to cause the LED to light up. When LED3 = 0 there will be enoguh voltage to light the LED up.
  *    You can confirm the output voltage with a voltmeter if you have access
  *    to one. If you tried that, did the voltage match your prediction?
  * 
  * 4. The statement 'if(SW2 == 0)' uses two equal signs, while the statement
  *    'LED3 = 1;' uses a single equal sign. What operation is performed by one
  *    equal sign? What operation is performed by two equal signs?
- * 
+ * When there is one equal sign it's assigning it a number, when there's two equal sign it's checking to see if it's equivalent.
  * 5. The following program code includes instructions that write to the PORTC
  *    output latches directly. Try it by copying and pasting this code below
  *    the existing SW2 'if' structure, at the location shown by the comment.
@@ -96,7 +112,7 @@ int main(void)
  *    What happens when pushbutton SW3 is pressed? Identify at least one
  *    advantage and one disadvantage of controlling the LEDs using 'LATC' writes
  *    rather than through individual 'LEDn = x;' statements.
- * 
+ * When SW3 is pressed all LEDs flash on and off at same time. The advantage is that you don't have to write as much code. The disadvantage is that you can use each LED by itself.
  * 6. Next, compare the operation of 'if' and 'while' structures to simulate
  *    momentary buttons. Replace the code you added in 5, above, with this code:
 
@@ -125,7 +141,7 @@ int main(void)
  *    Next, try press and holding SW4 while pressing and releasing SW3. Does it
  *    work as expected? Explain the difference in operation between the 'if' and
  *    'while' structures making up the momentary button code.
- * 
+ * 'if' is only checked once evry cycle while 'while' is always happening.
  * 7. Let's explore logical conditions using 'if' statements. Replace the code
  *    added in 6, above, with this nested if code to make a logical AND
  *    condition that will light LED D4 only if both SW3 and SW4 are pressed:
@@ -149,7 +165,7 @@ int main(void)
 
  *    Test the code to ensure it works as expected. Does the order of the if
  *    conditions matter? (eg. swap the conditional checks for SW3 and SW4)
- * 
+ * The order doesn't matter. As long as the two sitches are pressed at the same time LED4 will turn on.
  * 8. Next, replace the code from 7 with the following code which implements a
  *    logical AND conditional operator composed of two ampersands '&&':
  
