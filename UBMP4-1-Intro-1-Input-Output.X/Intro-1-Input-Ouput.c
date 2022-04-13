@@ -51,21 +51,24 @@ int main(void)
             LED6 = 0;
             __delay_ms(100);
         }
-         // Nested if 'AND' code
-        if(SW3 == 0)
+          if(SW3 == 0)
         {
-            if(SW4 == 0)
-            {
-                LED4 = 1;
-            }
-            else
-            {
-                LED4 = 0;
-            }
+            LED4 = 1;
+            __delay_ms(200);
+            LED6 = 1;
+            __delay_ms(200);
+            LED3 = 1;
+            __delay_ms(200);
+            LED5 = 1;
+            __delay_ms(200);
+            LED3 = 0;
+          
         }
-        else
+         // Make a tone while SW5 is held
+        if(SW5 == 0)
         {
-            LED4 = 0;
+            BEEPER = !BEEPER;
+            __delay_us(567);
         }
         
         // Add code for your Program Analysis and Programming Activities here:
@@ -89,7 +92,7 @@ int main(void)
  * 3. What voltage do you expect the microcontroller to output to LED D3 when
  *    the statement LED3 = 0; runs? What voltage do you expect the output to be
  *    when the statement LED3 = 1; runs?
- * When LED3 = 1 there won't be enough voltage to cause the LED to light up. When LED3 = 0 there will be enoguh voltage to light the LED up.
+ * When LED3 = 1 there won't be enough voltage to cause the LED to light up, so it'll be definitely less than two volts. When LED3 = 0 there will be enoguh voltage to light the LED up, which is around 2-3Volts.
  *    You can confirm the output voltage with a voltmeter if you have access
  *    to one. If you tried that, did the voltage match your prediction?
  * 
@@ -112,7 +115,7 @@ int main(void)
  *    What happens when pushbutton SW3 is pressed? Identify at least one
  *    advantage and one disadvantage of controlling the LEDs using 'LATC' writes
  *    rather than through individual 'LEDn = x;' statements.
- * When SW3 is pressed all LEDs flash on and off at same time. The advantage is that you don't have to write as much code. The disadvantage is that you can use each LED by itself.
+ * When SW3 is pressed all LEDs flash on and off at same time. The advantage is that you don't have to write as much code. The disadvantage is that you can't use each LED by itself.
  * 6. Next, compare the operation of 'if' and 'while' structures to simulate
  *    momentary buttons. Replace the code you added in 5, above, with this code:
 
@@ -141,7 +144,7 @@ int main(void)
  *    Next, try press and holding SW4 while pressing and releasing SW3. Does it
  *    work as expected? Explain the difference in operation between the 'if' and
  *    'while' structures making up the momentary button code.
- * 'if' is only checked once evry cycle while 'while' is always happening.
+ * 'if' is only checked once every cycle while 'while' is always happening.
  * 7. Let's explore logical conditions using 'if' statements. Replace the code
  *    added in 6, above, with this nested if code to make a logical AND
  *    condition that will light LED D4 only if both SW3 and SW4 are pressed:
@@ -182,7 +185,7 @@ int main(void)
  *    Does '&&' work the same way as the nested if structures? Can you think of
  *    at least one advantage of using a logical conditional operator instead of
  *    nested if structures?
- * 
+ * '&&' works the same as nested 'if' structures. The advantage is that you don't need to write as much lines of code.
  * 9. Replace the double ampersand '&&' with double vertical bars '||)' to make
  *    a logical OR conditional operator. Your code should look like this:
   
@@ -197,17 +200,17 @@ int main(void)
         }
 
  *    Describe the conditions under which LED4 turns on.
- * 
+ * LED4 only turns on if SW3 or SW4 are pressed.
  * 
  * Programming Activities
  * 
  * 1. The statement '__delay_ms(100);' creates a 100ms delay. Try changing one
  *    or more of the delay values in the program to 500ms and see what happens.
- * 
+ *LED5 takes 500ms to appear and go away. LED6 takes one second to appear, but only 100ms to go away.
  *    Can the delay be made even longer? Try 1000 ms. How big can the delay be
  *    before MPLAB-X produces an error message? (Hint: can you think of a fast
  *    and efficient way of guessing an unknown number?)
- * 
+ * It can go up to 4205ms, but after that number it will produce an error message.
  * 2. The '__delay_ms();' function only accepts integers as delay values. To
  *    make delays shorter than 1ms, specify a delay in microseconds using the
  *    '__delay_us();' function. You won't be able to see such short LED flashes
@@ -215,18 +218,12 @@ int main(void)
  *    them if they are used to turn the piezo beeper on and off. Try this code:
  
         // Make a tone while SW5 is held
-        if(SW5 == 0)
-        {
-            BEEPER = 1;
-            __delay_us(567);
-            BEEPER = 0;
-            __delay_us(567);
-        }
-
+       c
  *    Try changing the delay values in both of the __delay_us(); functions.
  *    Does the pitch of the tone increase or decrease if the delay value is
  *    made smaller?
- * 
+ * The lower the value the higher the pitch. The higher the value the lower the pitch
+
  * 3. This code demonstrates a more compact way of toggling the beeper output
  *    using a logical NOT operator '!'. Replace the code above, with this code:
  
@@ -241,8 +238,9 @@ int main(void)
  *    of the BEEPER pin when SW5 is released. What state will the BEEPER output
  *    be in after this code runs? While one advantage of this method is smaller
  *    code, can you think of one or more disadvantages based on its output when
- *    the button is released?
- * 
+ *    the button is released? 
+* A disadvantage of using this code is that you can't get as many unique sounds. The state of the BEEPER output will be off.
+
  * 4. Using modified versions of the original SW2 'if' structure, create a
  *    program that makes a unique LED flashing pattern for each pushbutton.
  * 
