@@ -239,11 +239,32 @@ int main(void)
  *    Using a logical conditional operator, modify the start-stop program from
  *    activity 5 to make it safer. SW3 should only turn on LED D4 if SW4 is
  *    released.
- * 
+ * if(SW3 == SW4)
+ *        {
+ *          if(SW3 == 0)
+ *           LED4 = 0;
+ *         }
+ *         if(SW4 = SW4)
+ *         { 
+ *           if(SW3 == 0)
+ *           LED4 = 1;
+ *         }
+ *         if(SW4 == 0)
+ *         {
+ *             LED4 = 0;
+ *         }
  * 9. LED D1 is normally used to indicate that a program is running, but it can
  *    be controlled by your program as well. If you take a look at the UBMP4
  *    schematic, you will see that LED D1's cathode (or negative) pin is
  *    connected to the microcontroller instead of the anode (positive) pin as
  *    with the other LEDs. This means that you need to make D1's output a zero
  *    to turn D1 on. Try it! Make a program that controls or flashes LED D1.
- */
+            if(SW5 == 0)
+*          {
+  *              LED1 = 1;
+  *          }
+  *          else
+  *          {
+  *              LED1 = 0;
+  *          }
+*/
