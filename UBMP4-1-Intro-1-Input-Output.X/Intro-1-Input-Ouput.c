@@ -57,7 +57,7 @@ int main(void)
  *    explain why this happens when SW2 is held.
  * It'll flash 4 times and keep flashing until it is released. This happens due to the code above.
  * 2. Explain the difference between the statements: LED3 = 0; and LED3 = 1;
- * LED3 = 1 means it's off while LED3 = 0 means it's on.
+ * LED3 = 0 means it's off while LED3 = 1 means it's on.
  * 3. What voltage do you expect the microcontroller to output to LED D3 when
  *    the statement LED3 = 0; runs? What voltage do you expect the output to be
  *    when the statement LED3 = 1; runs?
@@ -169,7 +169,7 @@ int main(void)
         }
 
  *    Describe the conditions under which LED4 turns on.
- * LED4 only turns on if SW3 or SW4 are pressed.
+ * LED4 only turns on if SW3 or SW4 are pressed. It also turns on when both are pressed at the same time.
  * 
  * Programming Activities
  * 
@@ -208,7 +208,7 @@ int main(void)
  *    be in after this code runs? While one advantage of this method is smaller
  *    code, can you think of one or more disadvantages based on its output when
  *    the button is released? 
-* A disadvantage of using this code is that you can't get as many unique sounds. The state of the BEEPER output will be off.
+* A disadvantage of using this code is that you won't know what state the BEEPER is in.
 
  * 4. Using modified versions of the original SW2 'if' structure, create a
  *    program that makes a unique LED flashing pattern for each pushbutton.
