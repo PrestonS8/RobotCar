@@ -31,15 +31,17 @@ int main(void)
     // Code in this while loop runs repeatedly.
     while(1)
 	{
-        if(SW3 == 0)
+        if(SW4 == 1)
         {
-            LED4 = 1;
+     if(SW3 == 0)
+{
+    LED4 = 1;
+}
+     if(SW4 == 0)
+     {
+         LED4 = 0;
+     }
         }
-         if(SW4 == 0)
-        {
-            LED4 = 0;
-        }
-     
         // Add code for your Program Analysis and Programming Activities here:
 
         // Activate bootloader if SW1 is pressed.
@@ -84,7 +86,8 @@ int main(void)
  *    What happens when pushbutton SW3 is pressed? Identify at least one
  *    advantage and one disadvantage of controlling the LEDs using 'LATC' writes
  *    rather than through individual 'LEDn = x;' statements.
- * When SW3 is pressed all LEDs flash on and off at same time. The advantage is that you don't have to write as much code. The disadvantage is that you can't use each LED by itself.
+ * When SW3 is pressed all LEDs flash on and off at same time. The advantage is that you don't have to write as much code. 
+ The disadvantage is that it's harder to read.
  * 6. Next, compare the operation of 'if' and 'while' structures to simulate
  *    momentary buttons. Replace the code you added in 5, above, with this code:
 
@@ -113,7 +116,7 @@ int main(void)
  *    Next, try press and holding SW4 while pressing and releasing SW3. Does it
  *    work as expected? Explain the difference in operation between the 'if' and
  *    'while' structures making up the momentary button code.
- * 'if' is only checked once every cycle while 'while' is always happening.
+ * 'if' is only checked once then checks the code after it every cycle, while 'while' controls the flow of the loop and it also stays in the loop.
  * 7. Let's explore logical conditions using 'if' statements. Replace the code
  *    added in 6, above, with this nested if code to make a logical AND
  *    condition that will light LED D4 only if both SW3 and SW4 are pressed:
@@ -227,7 +230,14 @@ int main(void)
  *    an industrial machine. LED D4 should turn on when SW3 is pressed, stay on
  *    even after SW3 is released, and turn off when SW4 is pressed. Test your
  *    program to make sure it works.
- * 
+ * if(SW3 == 0)
+        {
+            LED4 = 1;
+        }
+         if(SW4 == 0)
+        {
+            LED4 = 0;
+        }
  * 7. Running your program from 6, above, describe what happens when both SW3
  *    and SW4 are pressed. Does LED D4 stay on? If so, how does the brightness
  *    of LED D4 compare between its normal on state following SW3 being pressed
@@ -239,20 +249,17 @@ int main(void)
  *    Using a logical conditional operator, modify the start-stop program from
  *    activity 5 to make it safer. SW3 should only turn on LED D4 if SW4 is
  *    released.
- * if(SW3 == SW4)
- *        {
- *          if(SW3 == 0)
- *           LED4 = 0;
- *         }
- *         if(SW4 = SW4)
- *         { 
- *           if(SW3 == 0)
- *           LED4 = 1;
- *         }
- *         if(SW4 == 0)
- *         {
- *             LED4 = 0;
- *         }
+   if(SW4 == 1)
+        {
+     if(SW3 == 0)
+{
+    LED4 = 1;
+}
+     if(SW4 == 0)
+     {
+         LED4 = 0;
+     }
+        }
  * 9. LED D1 is normally used to indicate that a program is running, but it can
  *    be controlled by your program as well. If you take a look at the UBMP4
  *    schematic, you will see that LED D1's cathode (or negative) pin is
