@@ -115,6 +115,51 @@ int main(void)
     }
 }
 
+/*
+June 1, 2022:
+We searched for parts that we needed such as servos, motors, a battery, etc. However, we only found a couple servos that we could use. 
+June 2, 2022:
+We found multiple vehicles that we could use. We spent this day looking for parts that were useful for what we were trying to build.
+June 3, 2022:
+We found another vehicle that had four wheels, four motors, a motor driver, some random wires, and a battery. This also had a large enough chassis to fit our box on. This would be the vehicle that we would continue to use.
+June 4, 2022:
+We did nothing.
+June 5, 2022:
+We did nothing.
+June 6, 2022:
+We tried to figure out how to code the motor driver in an attempt to make the wheels move. As we did it we figured out some information such as we need certain wires. So, we decided to figure out how to code the servo as it will be easier. We also found a better vehicle to use that only had two wheels. So, we decided to keep using this one.
+June 7, 2022:
+We found a forked repository about servos and tried to understand what it meant. But we got confused.
+June 8, 2022:
+We played around with the servo code trying to code it so that it will be able to open and close our box. Then we found out how to code the servo so that it will open and close the box.
+June 9, 2022:
+We found a box that was large enough to hold a servo, but small enough to fit on our chassis. We then attached the servo to the box so that it would be able to open and close the box. But since the servo’s “arm” wasn't long enough we had to tape on a screw. 
+June 10, 2022:
+Since we finished up with the box we decided to continue searching for the parts for our car. We found most of the wires we will need, but we just have a female to female 2 pin wire.
+June 11, 2022:
+We did nothing
+June 12, 2022:
+ We did nothing.
+June 13, 2022:
+We found the last part we needed, but we didn’t start wiring it yet. We decided to work on the code first.
+June 14, 2022:
+We got lost trying to code and wire the vehicle. This day was wasted.
+June 15, 2022:
+Same as yesterday.
 
+June 16, 2022:
+We learned about H1OUT, H2OUT etc. We also learned how to move the car left, right, forwards, and backwards. We also found out that our right wheel doesn’t turn backwards for some reason.
+June 17, 2022:
+We thought it was a coding problem and tried to fix it, however, it did not work. This day was spent trying to figure out the problem.
+June 18, 2022:
+We did nothing
+June 19, 2022:
+We did nothing.
+June 20. 2022:
+We figured out that it couldn’t go backwards or turn right because one of the pins wasn't soldered properly. Once it was soldered on we could turn the car backwards and right.
+June 21, 2022:
+We tried to code the other board as a remote but we didn’t have enough time. So, as we did not have a remote we decided to code it so that when you press a button it continues going that direction for a certain amount of time.
+
+ */
 
 
