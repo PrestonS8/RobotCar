@@ -50,6 +50,12 @@ int main(void)
            EnableB = 1;
            Aforward = 1;
            Bforward = 1;
+           __delay_ms(2000);
+           EnableA = 0;
+           EnableB = 0;
+           Aforward = 0;
+           Bforward = 0;
+           
        }
          else if(backward == 0)
        {
@@ -57,6 +63,11 @@ int main(void)
            EnableB = 1;
            Abackward = 1;
            Bbackward = 1;
+           __delay_ms(2000);
+           EnableA = 0;
+           EnableB = 0;
+           Abackward = 0;
+           Bbackward = 0;
        }
          else if(left == 0)
        {
@@ -64,6 +75,11 @@ int main(void)
            EnableB = 1;
            Aforward = 1;
            Bbackward = 1;
+           __delay_ms(500);
+            EnableA = 0;
+           EnableB = 0;
+           Aforward = 0;
+           Bbackward = 0;
        }
           else if(right == 0)
        {
@@ -71,11 +87,11 @@ int main(void)
            EnableB = 1;
            Abackward = 1;
            Bforward = 1;
-       }
-        __delay_ms(500);
-       else if(EnableA == 0 && EnableB == 0)
-       {
-
+           __delay_ms(500);
+           EnableA = 0;
+           EnableB = 0;
+           Abackward = 0;
+           Bforward = 0;
        }
        else
        {
@@ -98,5 +114,7 @@ int main(void)
         }
     }
 }
+
+
 
 
